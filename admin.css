@@ -131,21 +131,17 @@ margin:0 10px;
     }
 .user{
     position:relative;
-    min-width:50px;
-    width:50px;
+    
+    width:80px;
     height:50px;
     border-radius:50%;
-    overflow:hidden;
     cursor:pointer;
 }
-    .user img {
-        position: absolute;
-        top:0px;
-        left: 0px;
-        width:50px;
-        height: 65px;
-        object-fit: contain;
-    }
+.user button{
+    width:50px;
+    background-color:red;
+}
+ 
 
 .dash {
     position: absolute;

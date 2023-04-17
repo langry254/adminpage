@@ -68,10 +68,8 @@
                        </label>
                     </div>
                     <div class="user">
-                        <img src="Content/images/User-64.png" />
-                        <ul>
-                            <li>Log Out</li>
-                        </ul>
+                        <asp:Button ID="Button1" runat="server" Text="Log out" />
+                        
                     </div>                    
                 </div>
             </div>
