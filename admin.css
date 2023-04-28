@@ -1,10 +1,11 @@
-﻿*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
-    overflow-x:hidden;
+    overflow-x: hidden;
+
 }
 .container{
     position:relative;
@@ -67,6 +68,7 @@ body {
     position:relative;
     display:block;
     padding:0 10px;
+    font-size:20px;
     height:60px;
     line-height:60px;
     white-space:nowrap;
