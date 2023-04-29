@@ -33,6 +33,21 @@
                     </td>
                     
                 </tr>
+                <tr>
+                    <td>#568549</td>
+                    <td>David rris</td>
+                    <td>d@gmail.com</td>                    
+                    <td>26 march 2023</td>
+                     <td>
+                        <div class="tb_btn">
+                            <asp:Button ID="Button2" runat="server" class="act_btn" Text="Edit"  />
+                        </div>
+                        <div class="tb_btn">
+                            <asp:Button ID="Button3" runat="server" class="act_btn" Text="Delete"  />
+                        </div>
+                    </td>
+                    
+                </tr>
                  
             </tbody>
         </table>
