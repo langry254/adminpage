@@ -7,39 +7,37 @@
     
     <div class="table_d">
         <h2>Product List</h2>
-        <table >
-            <thead>
-                <tr>
-                    <th>Product_id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Image</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#568549</td>
-                    <td>Banana</td>
-                    <td>100.00</td>                    
-                    <td>100</td>
-                    <td>100</td>
-                    <td>Fruits</td>
-                    <td>26 march</td>
-                     <td>
-                        <div class="tb_btn">
-                            <asp:Button ID="Button1" runat="server" class="act_btn" Text="Edit" OnClick="Button1_Click"  />
-                        </div>
-                        <div class="tb_btn">
-                            <asp:Button ID="Button8" runat="server" class="act_btn" Text="Delete"  />
-                        </div>
-                    </td>
-                    
-                </tr>
-                 
+        <table >            
+            <tbody>             
+           <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="product_id" ForeColor="#333333">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns >
+                    <asp:BoundField DataField="product_id" HeaderText="Product ID" />
+                    <asp:BoundField DataField="Name" HeaderText="Product Name" />
+                    <asp:BoundField DataField="price" HeaderText="Price" />
+                    <asp:BoundField DataField="quantity" HeaderText="Quantity" />
+                    <asp:BoundField DataField="ImageUrl" HeaderText="Image" />
+                    <asp:BoundField DataField="Category" HeaderText="Category" />
+                    <asp:BoundField DataField="date" HeaderText="Date" />
+                    <asp:TemplateField HeaderText="Action">
+            <ItemTemplate>
+                <asp:LinkButton ID="btnDelete"  runat="server" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to delete this product?')" style="text-decoration:none;color:red;" >Delete</asp:LinkButton>
+            </ItemTemplate>
+        </asp:TemplateField>
+                   
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
+
             </tbody>
         </table>
     </div>

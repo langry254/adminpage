@@ -3,10 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dash">
+        <!--display cards-->
     <div class="cardbox">
         <div class="card">
             <div>
-                <div class="num">1042</div>
+                <div class="num">
+                    <asp:Label ID="Label1" runat="server" Text="104"></asp:Label>
+                </div>
                 <div class="cardname">Products</div>
             </div>
             <div class="cardicon">
@@ -14,9 +17,12 @@
             </div>
         </div>
 
+        <!--orders-->
         <div class="card">
             <div>
-                <div class="num">1042</div>
+                <div class="num">
+                     <asp:Label ID="Label2" runat="server" Text="104"></asp:Label>
+                </div>
                 <div class="cardname">Orders</div>
             </div>
             <div class="cardicon">
@@ -24,20 +30,25 @@
             </div>
         </div>
 
-     
+     <!--customers-->
         <div class="card">
             <div>
-                <div class="num">1042</div>
+                <div class="num">
+                     <asp:Label ID="Label3" runat="server" Text="104"></asp:Label>
+                </div>
                 <div class="cardname">Customers</div>
             </div>
             <div class="cardicon">
                 <i class="fa fa-users" aria-hidden="true"></i>
             </div>
         </div>
-    
+
+    <!--income-->
         <div class="card">
             <div>
-                <div class="num">1042</div>
+                <div class="num">
+                     <asp:Label ID="Label4" runat="server" Text="104"></asp:Label>
+                </div>
                 <div class="cardname">Income</div>
             </div>
             <div class="cardicon">
@@ -45,6 +56,8 @@
              </div>
         </div>
    </div>
+
+        <!--the table-->
     
     <div class="table_d">
         <h2>Order List</h2>
@@ -67,7 +80,7 @@
                     <td>Nairobi</td>
                     <td>1000</td>
                     <td>
-                       <asp:Button ID="Button1" runat="server" Text="Delete" />
+                       <asp:Button ID="Button1" runat="server" Text="Delete" OnClick="Button1_Click" />
                     </td>
                     
                 </tr>

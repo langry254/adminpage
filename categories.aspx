@@ -13,6 +13,7 @@
             <asp:TextBox ID="tblcatname" runat="server" class="inputs" ></asp:TextBox>
             <br />
             <asp:Button ID="btnadd" runat="server" Text="Add" OnClick="btnadd_Click" />
+            <br />
             <asp:Label ID="lbldis" runat="server" Text="Label"></asp:Label>
     </div>
         <!--product creation-->
@@ -46,10 +47,12 @@
              <asp:FileUpload ID="FileUpload1" runat="server" />            
         </div>
         <div class="buttons">
-            <asp:Button ID="Button1" runat="server" class="btn" Text="Cancel" />
+            <asp:Button ID="Button1" runat="server" class="btn" Text="Cancel" OnClick="Button1_Click" />
         
             <asp:Button ID="Button4" runat="server"  class="btn" Text="Confirm" OnClick="Button4_Click" />
         </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lbldis2" runat="server" Text="Label"></asp:Label>
     </div>
 </div>
     </div>

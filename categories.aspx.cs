@@ -19,6 +19,7 @@ namespace adminpage
             dataclass.dbcon();
             //lbl display not visible
            lbldis.Visible = false;
+            lbldis2.Visible = false;
         }
 
         protected void btnadd_Click(object sender, EventArgs e)
@@ -73,12 +74,40 @@ namespace adminpage
             int prodquantity = Convert.ToInt32(txtquantity.Text);
             string filename2=Path.GetFileName(FileUpload1.FileName);
             string cname = DropDownList2.Text;
-            string sqlstate2 = "INSERT INTO Products(prod_name, price, quantity, ImageUrl, cat_id) values('" + prodname + "','" + price + "','"+prodquantity+"','"+filename2+ "', (SELECT TOP 1 cat_id FROM Categories WHERE name = '" + cname + "'))";
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = sqlstate2;
-            cmd.Connection = dataclass.con;
-            cmd.ExecuteNonQuery();
-            dataclass.con.Close();
+
+            if (prodname == "" || price == 0 || prodquantity == 0 || filename2 == "")
+            {
+                lbldis2.Text = "Text boxes are empty";
+                lbldis2.Visible = true;
+                lbldis2.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                string sqlstate2 = "INSERT INTO Products(prod_name, price, quantity, ImageUrl, cat_id) values('" + prodname + "','" + price + "','" + prodquantity + "','" + filename2 + "', (SELECT TOP 1 cat_id FROM Categories WHERE name = '" + cname + "'))";
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = sqlstate2;
+                cmd.Connection = dataclass.con;
+                cmd.ExecuteNonQuery();
+                dataclass.con.Close();
+
+                // Clear the textboxes
+                txtprice.Text = "";
+                txtprodname.Text = "";
+                txtquantity.Text = "";
+
+                // Show a success message using Js
+                string script = "alert('Item added successfully.');";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "successMessage", script, true);
+
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+          //onclick clear the textboxes
+            txtprice.Text = "";
+            txtprodname.Text = "";
+            txtquantity.Text = "";
         }
     }
 }

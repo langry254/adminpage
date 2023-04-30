@@ -10,14 +10,3 @@
    
 }
 
-function showForm() {
-    event.preventDefault();
-    document.getElementById('popup-form').style.display = 'block';
-}
-
-function hideForm(event) {
-    if (event.target.id === 'popup-form' || event.keyCode === 27) {
-        document.getElementById('popup-form').style.display = 'none';
-    }
-}
-document.addEventListener('click', hideForm);

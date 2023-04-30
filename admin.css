@@ -18,7 +18,7 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background-color: #4cff00;
+    background-color: #1C5E55;
     transition: 0.5s;
     overflow: hidden;
 }
@@ -37,7 +37,7 @@ body {
     list-style:none;
 }
     .navigation ul li:hover {
-        background: #00ff21;
+        background: #35a596;
     }
     .navigation ul li:nth-child(1){
         margin-bottom:50px;
@@ -69,7 +69,7 @@ body {
     position:relative;
     display:block;
     padding:0 10px;
-    font-size:200px;
+    font-size:20px;
     height:60px;
     line-height:60px;
     white-space:nowrap;
@@ -153,6 +153,7 @@ margin:0 10px;
     margin-top: 60px;
     height: auto;
     transition:0.5s;
+  
 }
 .dash.active {
     
@@ -205,27 +206,21 @@ margin:0 10px;
     padding:20px;
     cursor:pointer;
 }
-    .table_d table thead tr th {
+    .table_d table  {
         padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid rgba(0,0,0,0.6);
+        text-align: center;
+        
     }
     .table_d table tbody tr td {
         padding: 10px;
-        text-align: left;
+        text-align: center;
         border-bottom: 1px solid rgba(0,0,0,0.2);
     }
-        .table_d table tbody tr td .tb_btn {
-            padding:5px;
-        }
-            .table_d table tbody tr td .tb_btn .act_btn{
-                padding:4px;
-                width:55px;
-            }
-
-            tr:hover {
-                background-color: #D6EEEE;
-            }
+    #btndel{
+        text-decoration:none;
+        color:red;
+    }
+       
 
 
 .passbox {
