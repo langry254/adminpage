@@ -20,6 +20,8 @@ namespace adminpage
             //lbl display not visible
            lbldis.Visible = false;
             lbldis2.Visible = false;
+
+            
         }
 
         protected void btnadd_Click(object sender, EventArgs e)
@@ -70,12 +72,12 @@ namespace adminpage
         protected void Button4_Click(object sender, EventArgs e)
         {
             string prodname = txtprodname.Text;
-            decimal price=Convert.ToDecimal(txtprice.Text);
-            int prodquantity = Convert.ToInt32(txtquantity.Text);
+            
+            
             string filename2=Path.GetFileName(FileUpload1.FileName);
-            string cname = DropDownList2.Text;
+            string cname = DropDownList2.SelectedValue;
 
-            if (prodname == "" || price == 0 || prodquantity == 0 || filename2 == "")
+            if (string.IsNullOrEmpty(prodname)  || string.IsNullOrEmpty(txtprice.Text) || string.IsNullOrEmpty(txtquantity.Text)|| string.IsNullOrEmpty(filename2))
             {
                 lbldis2.Text = "Text boxes are empty";
                 lbldis2.Visible = true;
@@ -83,6 +85,8 @@ namespace adminpage
             }
             else
             {
+                decimal price = Convert.ToDecimal(txtprice.Text);
+                int prodquantity = Convert.ToInt32(txtquantity.Text);
                 string sqlstate2 = "INSERT INTO Products(prod_name, price, quantity, ImageUrl, cat_id) values('" + prodname + "','" + price + "','" + prodquantity + "','" + filename2 + "', (SELECT TOP 1 cat_id FROM Categories WHERE name = '" + cname + "'))";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = sqlstate2;
