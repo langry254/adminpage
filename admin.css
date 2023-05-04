@@ -192,6 +192,7 @@ margin:0 10px;
 .table_d {
     position: relative;
     width: 75%;
+    height:fit-content;
     padding: 30px;
 }
 .table_d h2{
@@ -278,5 +279,44 @@ margin:0 10px;
         text-align: center;
         text-decoration: underline;
     }
+
+
+.cbtn {
+    width: 80px;
+    padding:10px;
+    margin:10px;
+    cursor:pointer;
+}
+    .create{
+        position:absolute;
+        
+        z-index:1;
+        overflow:auto;
+        top:100%;
+        left:38%;
+        transform:translate(-50%, -50%);
+        background-color:darkgray;
+        border-radius:10px;
+        box-shadow:3px 3px 10px 10px rgba(0,0,0, 0.2);
+       
+    }
+    .c_form{
+        width:500px;
+        height:auto;
+        padding:20px 50px ;
+    }
+
+.create .c_form h2{
+    text-align:center;
+    text-decoration:underline;
+}
+.create .c_form input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
 
 

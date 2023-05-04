@@ -3,6 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="dash">
+
+
+
+
+    <!-------------display class for changing the passwords--------------------------->
+
     <div class="passbox">
         <h2>Change Password</h2>
         <div class="passcards">

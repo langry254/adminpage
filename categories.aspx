@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dash">
-        <!--category creation-->
+                     <!--category creation-->
     <div class="passbox1">
         <h2>Create Category</h2>
         <div class="passcards1"> 
@@ -16,7 +16,8 @@
             <br />
             <asp:Label ID="lbldis" runat="server" Text="Label"></asp:Label>
     </div>
-        <!--product creation-->
+
+        <!--Category creation-->
     <div class="passbox">
         <h2>Create Product</h2>        
         <div class="passcards">            
@@ -28,6 +29,7 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:kapfarmConnectionString %>" SelectCommand="SELECT [name] FROM [Categories]"></asp:SqlDataSource>
         </div>
 
+        <!------Product creation----------->
          <div class="passcards">
             <asp:Label ID="Label2" runat="server" Text="Product name" ></asp:Label>
             <asp:TextBox ID="txtprodname" runat="server" class="inputs" placeholder="product name"></asp:TextBox><br />

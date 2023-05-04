@@ -4,16 +4,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="dash">
    
-    
+    <!-----------product table----------->
+
     <div class="table_d">
         <h2>Product List</h2>
         <table >            
-            <tbody>             
+            <tbody>          
            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" OnRowDeleting="GridView1_RowDeleting" DataKeyNames="product_id" ForeColor="#333333">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns >
                     <asp:BoundField DataField="product_id" HeaderText="Product ID" />
-                    <asp:BoundField DataField="Name" HeaderText="Product Name" />
+                    <asp:BoundField DataField="Name" HeaderText="Product Name"  />
                     <asp:BoundField DataField="price" HeaderText="Price" />
                     <asp:BoundField DataField="quantity" HeaderText="Quantity" />
                     <asp:BoundField DataField="ImageUrl" HeaderText="Image" />
@@ -22,7 +23,9 @@
                     <asp:TemplateField HeaderText="Action">
             <ItemTemplate>
                 <asp:LinkButton ID="btnupdate" runat="server" style="text-decoration:none;" OnClick="btnupdate_Click">Update</asp:LinkButton>
-                <asp:LinkButton ID="btnDelete"  runat="server" CommandName="Delete" OnClientClick="return confirm('Are you sure you want to delete this product?')" style="text-decoration:none;color:red;" >Delete</asp:LinkButton>
+                <asp:LinkButton ID="btnDelete"  runat="server" CommandName="Delete" 
+                    OnClientClick="return confirm('Are you sure you want to delete this product?')"
+                    style="text-decoration:none;color:red;" >Delete</asp:LinkButton>
             </ItemTemplate>
         </asp:TemplateField>
                    
@@ -41,6 +44,8 @@
 
             </tbody>
         </table>
+
+        <!-----------the update form----------->
         <asp:PlaceHolder ID="PlaceHolder1" runat="server">
          <div id="update">
              <asp:Label ID="Label1" runat="server" Text="ProductId"></asp:Label>
@@ -67,4 +72,5 @@
     </div>
          
  </div>
+         
 </asp:Content>

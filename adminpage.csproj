@@ -72,6 +72,7 @@
     </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\login1.jpg" />
     <Content Include="Content\images\User-64.png" />
     <Content Include="customer.aspx" />
     <Content Include="dashboard.aspx" />

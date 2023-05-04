@@ -15,7 +15,7 @@ namespace adminpage
             string constring = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\B\\Source\\Repos\\langry254\\adminpage\\App_Data\\kapfarm.mdf;Integrated Security=True";
             con = new SqlConnection(constring);
 
-            //check con state
+            //check connection state
             if (con.State == System.Data.ConnectionState.Open)
             {
                 con.Close();

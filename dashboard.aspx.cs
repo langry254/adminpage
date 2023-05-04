@@ -13,8 +13,9 @@ namespace adminpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //display the text on the cards
+            
             dataclass.dbcon();
+            //display the text on the cards
             // count the number of products
             string sqlQuery = "SELECT COUNT(*) AS ProductCount FROM Products;";
 
@@ -25,7 +26,7 @@ namespace adminpage
 
             // Execute the query and retrieve the result as a SqlDataReader object
                 using(SqlDataReader reader = cmd.ExecuteReader())
-        {
+                 {
                 // If the reader has rows, read the first row and retrieve the value of the "ProductCount" column
                 if (reader.HasRows && reader.Read())
                 {
@@ -36,7 +37,28 @@ namespace adminpage
                     
                 }
             
-        }
+                 }
+
+
+            //dispalay the customer card
+            string userquery =  "SELECT COUNT(*) AS usercount FROM Users;";
+            
+            cmd.CommandText = userquery;
+            cmd.Connection = dataclass.con;
+            // Execute the query and retrieve the result as a SqlDataReader object
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                // If the reader has rows, read the first row and retrieve the value of the "ProductCount" column
+                if (reader.HasRows && reader.Read())
+                {
+                    int userCount = reader.GetInt32(reader.GetOrdinal("usercount"));
+
+                    //display on the card
+                    Label3.Text =  userCount.ToString();
+
+                }
+
+            }
 
         }
 

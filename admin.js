@@ -9,4 +9,9 @@
     dash.classList.toggle('active');
    
 }
-
+function togglecreate() {
+    var dash = document.querySelector('.dash');
+    dash.classList.toggle('active');
+    var popup = document.querySelector('.create');
+    popup.classList.toggle('active');
+}

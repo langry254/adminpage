@@ -72,8 +72,8 @@ namespace adminpage
         protected void Button4_Click(object sender, EventArgs e)
         {
             string prodname = txtprodname.Text;
-            
-            
+            int prodquantity;
+            decimal price;
             string filename2=Path.GetFileName(FileUpload1.FileName);
             string cname = DropDownList2.SelectedValue;
 
@@ -83,10 +83,11 @@ namespace adminpage
                 lbldis2.Visible = true;
                 lbldis2.ForeColor = System.Drawing.Color.Red;
             }
-            else
-            {
-                decimal price = Convert.ToDecimal(txtprice.Text);
-                int prodquantity = Convert.ToInt32(txtquantity.Text);
+            else if(decimal.TryParse(txtprice.Text, out  price) || int.TryParse(txtquantity.Text,out prodquantity))
+            {             
+                       
+                 price = Convert.ToDecimal(txtprice.Text);
+                 prodquantity = Convert.ToInt32(txtquantity.Text);
                 string sqlstate2 = "INSERT INTO Products(prod_name, price, quantity, ImageUrl, cat_id) values('" + prodname + "','" + price + "','" + prodquantity + "','" + filename2 + "', (SELECT TOP 1 cat_id FROM Categories WHERE name = '" + cname + "'))";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = sqlstate2;
@@ -102,6 +103,17 @@ namespace adminpage
                 // Show a success message using Js
                 string script = "alert('Item added successfully.');";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "successMessage", script, true);
+
+            }
+            else
+            {
+                //if the input on the textbox is not an in or decimal
+                string script = "alert('invalid price and quantity.');";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "successMessage", script, true);
+                // Clear the textboxes
+                txtprice.Text = "";
+                txtprodname.Text = "";
+                txtquantity.Text = "";
 
             }
         }

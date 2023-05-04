@@ -10,9 +10,11 @@
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="admin.css" rel="stylesheet" />
     <script src="admin.js"></script>
+   
 </head>
 <body>
     <form id="form1" runat="server">
+                                 <!--side navigations-------------------------->
         <div class="container">
             <div class="navigation">
                 <ul>

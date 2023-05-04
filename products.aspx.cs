@@ -18,6 +18,8 @@ namespace adminpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            //call the data class
             dataclass.dbcon();
 
             if (!IsPostBack)
@@ -42,6 +44,7 @@ namespace adminpage
             GridView1.DataSource = table;
             GridView1.DataBind();
 
+            //hide the update form
             PlaceHolder1.Visible = false;
 
         }
@@ -54,6 +57,7 @@ namespace adminpage
         protected void btnEdit_Click(object sender, EventArgs e)
         {
 
+
         }
         // deleteting statement!!!!!!!!!!!
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -62,7 +66,7 @@ namespace adminpage
             {
                 int product_id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
 
-                // write your delete statement here
+                //  delete statement 
                 string del = "DELETE FROM Products WHERE product_id = @product_id";
 
                 SqlCommand cmd = new SqlCommand();
@@ -96,7 +100,7 @@ namespace adminpage
             GridView1.DataSource = table;
             GridView1.DataBind();
         }
-
+        //update statement
         protected void Button2_Click(object sender, EventArgs e)
         {
             int p_id = Convert.ToInt32(TextBox1.Text);
@@ -105,19 +109,11 @@ namespace adminpage
             int p_price=Convert.ToInt32(TextBox5.Text);
             int p_quantity=Convert.ToInt32(TextBox6.Text);
             string p_file = Path.GetFileName(FileUpload2.FileName);
-            //to be changed
-            string query = "SELECT COUNT(*) FROM Products WHERE product_id = @productId";
-            SqlCommand cmd = new SqlCommand(query, dataclass.con);
-            cmd.Parameters.AddWithValue("@productId", p_id);
-            int count = (int)cmd.ExecuteScalar();
-            if (count > 0)
-            {
-                string script = "alert('Item added successfully.');";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "successMessage", script, true);
-            }
-            else
-            {
-                string updatequery = "UPDATE Products SET prod_name='" + p_name + "',price='" + p_price + "',quantity='" + p_quantity + "',ImageUrl='" + p_file + "',cat_id=(SELECT TOP 1 cat_id  FROM Categories WHERE name='" + ddl + "')" +
+           
+            
+            
+                string updatequery = "UPDATE Products SET prod_name='" + p_name + "',price='" + p_price + "',quantity='" + p_quantity + "'," +
+                "ImageUrl='" + p_file + "',cat_id=(SELECT TOP 1 cat_id  FROM Categories WHERE name='" + ddl + "')" +
                     "WHERE product_id='" + p_id + "'";
                 SqlCommand comms = new SqlCommand();
                 comms.Connection = dataclass.con;
@@ -126,11 +122,12 @@ namespace adminpage
                 dataclass.con.Close();
 
                 bindData();
-            }
+            
 
 
 
         }
+        //called when the update link is clicked
         protected void btnupdate_Click(object sender, EventArgs e)
         {
             
